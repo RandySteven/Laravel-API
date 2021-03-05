@@ -18,10 +18,11 @@ use Illuminate\Support\Facades\Route;
 //PUT/PATCH ==> Update
 //DELETE ==> Delete
 
-// Route::get('/', function () {
-//     return '<h1>Hello</h1>';
-// });
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/post', [PostController::class, 'index']);
 Route::get('/create-post', [PostController::class, 'create']);
 Route::post('/store-post', [PostController::class, 'store'])->name('post.store');
+
 // Route::view('/', 'welcome');
